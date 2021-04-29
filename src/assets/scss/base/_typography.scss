@@ -1,0 +1,34 @@
+/**
+ * Basic typography style for copy text
+ */
+.body{
+  font-family: $primary-font;
+}
+
+//FontSize
+.fz-12{font-size: 12px;}
+.fz-16{font-size: 16px;}
+.fz-18{font-size: 18px;}
+.fz-22{font-size: 22px;}º
+
+//text-align
+.justify{text-align: justify;}
+.center{text-align: center;}
+.left{text-align: initial;}
+
+//font-weight
+
+.regular{font-weight: normal;}
+.semi-bold{font-weight: bold;}
+.bold{font-weight: bolder;}
+
+//Titles and subtitles
+h1{
+  font-size:45px;
+}
+h2{
+ font-size:30px;
+}
+h3{
+  font-size:25px;
+}
