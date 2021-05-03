@@ -4,34 +4,45 @@
 Este proyecto consiste en crear el juego "Rock, Paper, Scissors, Lizard, Spock", que principalmente sea capaz de:
 - Generar dos jugadores aleatorios
 - Asignar aleatoriamente a cada jugador un movimiento(Rock, Paper, Scissors, Lizard, Spock)
-- Según las reglas proporcionadas, en cada partida se escogera un jugador ganador y se le sumara un punto, o se determinara como un empate, en caso que ambos jugadores tengan el mismo movimiento, en este último caso, no habrá punto para ningun jugador.
+- Según las reglas proporcionadas, en cada partida se escogerá un jugador ganador y se le sumara un punto, o se determinara como un empate, en caso que ambos jugadores tengan el mismo movimiento, en este último caso, no habrá punto para ningun jugador.
 - Mostrar el puntaje de ambos jugadores durante toda la partida.
 - Al recargar la página el estado de la partida se conserva.
-- Despues de 5 rondas, el jugador con mayor puntaje es declarado ganador y se puede restaurar el juego, y el puntaje se reinicia.
+- Después de 5 rondas, el jugador con mayor puntaje es declarado ganador y se puede restaurar el juego, y el puntaje se reinicia.
 
-esto ha sido desarrollado como prueba tecnica de Abacum para el puesto de Frontend Engineer.
+esto ha sido desarrollado como prueba técnica de Abacum para el puesto de Frontend Engineer.
 
-El proyecto ha sido desarrollado con React y TypeScript,  cuenta con sus respectivos test y vista adaptable a diferentes dispositivos (móvil, tablet y desktop). Para los estilos del mismo, se ha utilizado sass implementando la metodología BEM (Block-Element-Modifier). 
+El proyecto ha sido desarrollado con React y TypeScript, cuenta con sus respectivos test y vista adaptable a diferentes dispositivos (móvil, tablet y desktop). Para los estilos del mismo, se ha utilizado sass implementando la metodología BEM (Block-Element-Modifier). 
 
 Además se ha desplegado para facilitar la visualización e interacción con el mismo por parte del equipo de Abacum. Se puede acceder mediante este enlace:https://abacum-test-frontend.vercel.app/
 
 ### Componentes
 
-Para el desarrolo de la interfaz he utilizado los componentes de https://material-ui.com/, además de crear dos componentes personalizados:
+Para el desarrollo de la interfaz he utilizado los componentes de https://material-ui.com/, además de crear dos componentes personalizados:
 
--Player: He utilizado un Badge que contiene dos avatar, el mas grande muestra para mostrar el movimiento asignado aleatoriamente a el jugador, y uno pequeño que representa la imagen del jugador.
+-Player: He utilizado un Badge que contiene dos avatar, el más grande muestra para mostrar el movimiento asignado aleatoriamente para el jugador, y uno pequeño que representa la imagen del jugador. El componente recibe las propiedades de la interfaz IPlayerCard que permite establecer la posición del componente del avatar pequeño y las propiedades del jugador que se mostraran, que en nuestro caso es la imagen.
 
--Timeline: Componente que contiene la imagen del jugador que ha ganado cada ronda, junto con un paper que indica quién ha sido el ganador y cual ha sido su movimiento.
+-Timeline: Componente que contiene la imagen del jugador que ha ganado cada ronda, junto con un paper que indica quién ha sido el ganador y cual ha sido su movimiento. A este componente le pasamos un histórico de todas las rondas del juego.
+
+Dentro de este componente tenemos funciones como getWinnerText(), que devuelve el texto correspondiente a la jugada que se realizó. Para evitar hacerlo con switch o con if, y para facilitar futuras modificaciones, se ha implementado con un array.
 
 
 ### Servicio Game
 
-especificar que es services/game.ts y el por que esta hecho asi
-Describir enums y funciones y que reciben que devuelven
+Función getMove(): nos devuelve un movimiento aleatorio de los permitidos.
 
+Función checkMove(): recibe dos movimientos y verifica si el movimiento 1 vence al movimiento 2
 
+Función getWinner(): recibe como parametro dos movimientos y devuelve un enum que identifica al ganador.
 
+### Game.tsx
+Esta clase contiene todos los componentes anteriores y las diferentes partes de las vistas, separadas en funciones y con condicionales para que se muestren únicamente en el momento adecuado.
 
+Para cargar y guardar el estado del juego cuando se refresque la ventana, se guardan los datos en el local storage y se implementó esta lógica dentro del useEffect().
+
+### Test
+Se hicieron dos test para la función de checkMove() y getWinner(), ambas usan la misma lógica. Como se deben de probar todas las combinaciones de movimientos entre sí, los resultados de los test se guardan en un array, el cual con dos bucles for van ejecutando movimiento por movimiento y comparándolo con el resultado esperado indicado en el array.
+
+--- 
 In the project directory, you can run:
 
 ### `npm start`
