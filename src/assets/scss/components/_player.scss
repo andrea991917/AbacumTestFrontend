@@ -1,0 +1,15 @@
+.player{
+  margin: 30px auto auto auto;
+  &__img{
+       border: 2px solid #fdbc22;
+   }
+  &__move{
+    border: 5px solid #fdbc22;
+    img{
+      width: 60%;
+      height: auto;
+      z-index: 2;
+    }
+  }
+
+}

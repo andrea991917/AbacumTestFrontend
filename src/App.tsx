@@ -1,11 +1,16 @@
 import React from 'react';
 import Game from "./pages/Game";
 import "./assets/scss/style.scss";
+import { StylesProvider } from '@material-ui/core';
 
 function App() {
   return (
     <div>
-      <Game/>
+
+        <StylesProvider injectFirst>
+            <Game/>
+        </StylesProvider>
+
     </div>
   );
 }

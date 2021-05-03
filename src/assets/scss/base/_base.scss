@@ -1,6 +1,9 @@
 // -----------------------------------------------------------------------------
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
+body{
+  font-family: $primary-font;
+}
 
 .content-centered{
   display: flex;

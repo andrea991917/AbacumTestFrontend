@@ -1,11 +1,54 @@
 .player{
   &__move{
-    width: 500px;
-    height: 500px;
+    width: 200px ;
+    height: 200px;
   }
   &__img{
 
   }
 }
 
-.red{}
+//Winner
+
+.card{
+  padding: 50px;
+  text-align: center;
+ &-winner{
+   &__img{
+     width: 200px ;
+     height: 200px;
+     border: 5px solid #fdbc22;
+   }
+   h2{
+     margin-bottom:10px
+   }
+   p{
+     margin-top:0px;
+     font-size: 20px;
+   }
+   button{
+     margin:5px;
+   }
+ }
+  &-start{
+    flex-direction: column;
+    font-family: 'Orelega One', cursive;
+    &__img{
+      margin:25px;
+    }
+    h2{
+      font-weight: 500;
+    }
+  }
+  &-game{
+    &__points{
+      div{
+        font-size: 20px ;
+        margin:auto;
+      }
+    }
+    button{
+      margin: 0 39px;
+    }
+  }
+}

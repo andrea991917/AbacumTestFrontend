@@ -9,15 +9,15 @@ The task is to create a simple game called "Rock, Paper, Scissors, Lizard, Spock
 ### Game rules
 
 - Scissors cuts paper
-- Paper covers rock
-- Rock crushes lizard
-- Lizard poisons Spock
-- Spock smashes scissors
 - Scissors decapitates lizard
-- Lizard eats paper
+- Paper covers rock
 - Paper disproves Spock
-- Spock vaporizes rock
 - Rock crushes scissors
+- Rock crushes lizard
+- Spock smashes scissors
+- Spock vaporizes rock
+- Lizard poisons Spock
+- Lizard eats paper
 
 ### Resources
 
