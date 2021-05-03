@@ -1,7 +1,7 @@
 import React from 'react';
 import Badge from '@material-ui/core/Badge';
 import Avatar from '@material-ui/core/Avatar';
-import { Theme, makeStyles, withStyles, createStyles } from '@material-ui/core/styles';
+import {createStyles, Theme, withStyles} from '@material-ui/core/styles';
 import lizard from "../assets/images/icon-lizard.svg"
 import paper from "../assets/images/icon-paper.svg"
 import rock from "../assets/images/icon-rock.svg"
@@ -9,8 +9,17 @@ import spock from "../assets/images/icon-spock.svg"
 import scissors from "../assets/images/icon-scissors.svg"
 import "../assets/scss/components/_cards.scss"
 import {MovesEnum} from "../services/game";
+import {IPlayer} from "../pages/Game";
 
-const SmallAvatar = withStyles((theme: Theme) =>
+
+
+interface IPlayerCard {
+    horizontalPosition: "left" | "right"
+    player: IPlayer
+}
+
+
+const SmallAvatar = withStyles(() =>
     createStyles({
         root: {
             width: 80,
@@ -19,34 +28,8 @@ const SmallAvatar = withStyles((theme: Theme) =>
     }),
 )(Avatar);
 
-const StyleMove = withStyles({
-    root: {
-        width: 150,
-        height: 150,
-        backgroundColor: `gray`,
-        border: `5px solid red`
-    }
-})(Avatar);
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            width: 200,
-            height: 200,
-            display: 'flex',
-            '& > *': {
-                margin: theme.spacing(1),
-            },
-        },
-    }),
-);
-
-interface IPlayerCard{
-    horizontalPosition: "left" | "right"
-    moveImg: MovesEnum | null
-}
-
-function getMoveImage(move:MovesEnum | null){
+function getMoveImage(move: MovesEnum | null) {
     // @ts-ignore
     switch (MovesEnum[move]) {
         case MovesEnum.MOVE_LIZARD:
@@ -64,21 +47,21 @@ function getMoveImage(move:MovesEnum | null){
     }
 }
 
-function Player(props : IPlayerCard) {
-    const classes = useStyles();
-    const styleMove = useStyles();
-
+function Player(props: IPlayerCard) {
+    // Todo set image
     return (
-        <div className={classes.root} >
+        <div>
             <Badge
                 overlap="circle"
                 anchorOrigin={{
                     vertical: 'top',
                     horizontal: props.horizontalPosition,
                 }}
-                badgeContent={<SmallAvatar alt="Remy Sharp" src="https://placekitten.com/100/120" className=" player__img"/>}
-             className="player">
-                <Avatar alt="Travis Howard" src={getMoveImage(props.moveImg)} className="player__move"/>
+                badgeContent={<SmallAvatar alt="Remy Sharp"
+                                           src={props.player.image?? ''}
+                                           className=" player__img"/>}
+                className="player">
+                <Avatar alt="Travis Howard" src={getMoveImage(props.player.currentMove)} className="player__move"/>
             </Badge>
         </div>
     );

@@ -81,9 +81,9 @@ function TimelineGame(props: IProps) {
     return (
         <Timeline align="alternate">
             {
-                props.history.map(x => {
+                props.history.map((x, k) => {
                     return (
-                        <TimelineItem>
+                        <TimelineItem key={k}>
                             <TimelineSeparator>
                                 <Avatar style={{width: '50px', height: '50px'}}>
                                     {getWinnerImg(x)}

@@ -1,8 +1,36 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Test Frontend Engineer Abacum
 
-## Available Scripts
+Este proyecto consiste en crear el juego "Rock, Paper, Scissors, Lizard, Spock", que principalmente sea capaz de:
+- Generar dos jugadores aleatorios
+- Asignar aleatoriamente a cada jugador un movimiento(Rock, Paper, Scissors, Lizard, Spock)
+- Según las reglas proporcionadas, en cada partida se escogera un jugador ganador y se le sumara un punto, o se determinara como un empate, en caso que ambos jugadores tengan el mismo movimiento, en este último caso, no habrá punto para ningun jugador.
+- Mostrar el puntaje de ambos jugadores durante toda la partida.
+- Al recargar la página el estado de la partida se conserva.
+- Despues de 5 rondas, el jugador con mayor puntaje es declarado ganador y se puede restaurar el juego, y el puntaje se reinicia.
+
+esto ha sido desarrollado como prueba tecnica de Abacum para el puesto de Frontend Engineer.
+
+El proyecto ha sido desarrollado con React y TypeScript,  cuenta con sus respectivos test y vista adaptable a diferentes dispositivos (móvil, tablet y desktop). Para los estilos del mismo, se ha utilizado sass implementando la metodología BEM (Block-Element-Modifier). 
+
+Además se ha desplegado para facilitar la visualización e interacción con el mismo por parte del equipo de Abacum. Se puede acceder mediante este enlace:https://abacum-test-frontend.vercel.app/
+
+### Componentes
+
+Para el desarrolo de la interfaz he utilizado los componentes de https://material-ui.com/, además de crear dos componentes personalizados:
+
+-Player: He utilizado un Badge que contiene dos avatar, el mas grande muestra para mostrar el movimiento asignado aleatoriamente a el jugador, y uno pequeño que representa la imagen del jugador.
+
+-Timeline: Componente que contiene la imagen del jugador que ha ganado cada ronda, junto con un paper que indica quién ha sido el ganador y cual ha sido su movimiento.
+
+
+### Servicio Game
+
+especificar que es services/game.ts y el por que esta hecho asi
+Describir enums y funciones y que reciben que devuelven
+
+
+
 
 In the project directory, you can run:
 
@@ -39,8 +67,5 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
