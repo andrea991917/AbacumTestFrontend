@@ -4,12 +4,22 @@
        border: 2px solid #fdbc22;
    }
   &__move{
-    border: 5px solid #fdbc22;
+    border: 5px solid $color-gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px ;
+    height: 200px;
     img{
       width: 60%;
       height: auto;
-      z-index: 2;
     }
   }
 
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 1024px) {
+
+}
+

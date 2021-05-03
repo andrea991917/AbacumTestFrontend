@@ -12,8 +12,7 @@
 'base/typography';
 
 // 4. Layout-related sections
-@import 'layout/header',
-'layout/navbar';
+@import 'layout/header';
 
 // 5. Components
 @import 'components/button',
@@ -21,8 +20,7 @@
 'components/cards';
 
 // 6. Page-specific styles
-@import 'pages/home',
-'pages/auth';
+@import 'pages/home';
 
 // 7. Themes
 

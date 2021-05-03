@@ -186,9 +186,9 @@ function Game() {
                             <div>Points Player 1 : {p1.points}</div>
                             <div>Points Player 2 : {p2.points}</div>
                         </Grid>
-                    <Grid container direction="row" justify="space-between" alignItems="center">
+                    <Grid container direction="row" justify="space-between" alignItems="center" className="card-game__players">
                         <Player horizontalPosition={"left"} moveImg={p1.currentMove}/>
-                        <div>
+                        <div className="card-game__wins">
                             <h3>{getWinnerText(game.history.slice(-1)[0])}</h3>
                             <Button variant="outlined" color="primary" onClick={handleClick} className="btn-base">
                                 {playing ? "Now" : "Start Playing"}
@@ -249,11 +249,10 @@ function Game() {
                        <Modal
                            open={open}
                            onClose={handleClose}
-                           aria-labelledby="simple-modal-title"
-                           aria-describedby="simple-modal-description "
-                           className=""
+
+
                        >
-                           <Paper elevation={3} className="card card-winner">
+                           <Paper elevation={3} className="card card-winner__timeline">
                                <TimelineGame history={game.history}/>
                            </Paper>
                        </Modal>

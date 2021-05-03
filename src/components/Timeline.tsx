@@ -92,8 +92,8 @@ function TimelineGame(props: IProps) {
                             </TimelineSeparator>
                             <TimelineContent>
                                 <Paper elevation={3} className={classes.paper}>
-                                    <Typography variant="h6" component="h1">
-                                        {x.winner === 0 ? " Nobody wins this round" : "Player " + x.winner +" wins" }
+                                    <Typography variant="h6" component="h1"><b>{x.winner === 0 ? " Nobody wins this round" : "Player " + x.winner +" wins" }</b>
+
                                     </Typography>
                                     <Typography>{getWinnerText(x)}</Typography>
                                 </Paper>

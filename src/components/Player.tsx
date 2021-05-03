@@ -7,7 +7,6 @@ import paper from "../assets/images/icon-paper.svg"
 import rock from "../assets/images/icon-rock.svg"
 import spock from "../assets/images/icon-spock.svg"
 import scissors from "../assets/images/icon-scissors.svg"
-
 import "../assets/scss/components/_cards.scss"
 import {MovesEnum} from "../services/game";
 
